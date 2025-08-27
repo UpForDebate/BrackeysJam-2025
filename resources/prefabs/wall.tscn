@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b62sqqcrowjie"]
+
+[ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_p7o16"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yiytm"]
+rough = true
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiytm"]
+size = Vector2(244.875, 32.5002)
+
+[node name="Obstacle" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_yiytm")
+can_sleep = false
+freeze = true
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2.47, 1)
+texture = ExtResource("1_p7o16")
+offset = Vector2(49.7975, -15.5005)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.7499, 123.563)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_yiytm")
