@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuaymmwemlfws"]
+[gd_scene load_steps=9 format=3 uid="uid://cuaymmwemlfws"]
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_ua0nc"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_yiytm"]
 [ext_resource type="PackedScene" uid="uid://b62sqqcrowjie" path="res://resources/prefabs/wall.tscn" id="5_s7feg"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
+[ext_resource type="Texture2D" uid="uid://dtocevkj5cq2o" path="res://resources/sprites/obstacles/spikes.png" id="7_m6v08"]
+[ext_resource type="Script" uid="uid://y3406ncr68uf" path="res://scenes/game_scenes/spikes.gd" id="8_aneg2"]
 
 [node name="FirstLevel" type="Node2D"]
 
@@ -35,3 +37,16 @@ rotation = 4.71239
 
 [node name="Pad" parent="." instance=ExtResource("6_m8mph")]
 position = Vector2(735, 395)
+
+[node name="Spikes" type="Sprite2D" parent="."]
+position = Vector2(916, 142)
+rotation = 1575.51
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_m6v08")
+script = ExtResource("8_aneg2")
+
+[node name="Area2D" type="Area2D" parent="Spikes"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes/Area2D"]
+position = Vector2(16.6711, -89.999)
+polygon = PackedVector2Array(-30, 0, 96.6639, 56.6714, 126.663, 73.3394, 116.658, 173.339, -153.342, 179.992, -183.336, 59.991)
