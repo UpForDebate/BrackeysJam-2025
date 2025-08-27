@@ -1,15 +1,27 @@
 extends Sprite2D
 
+# Slingshot max size
 @export var max_stretch: float = 300.0 
+
+# Projectile prefab and force to launch it
 @export var projectile_scene: PackedScene
 @export var force_multiplier: float = 10.0  # tweak this for power
 @export var spawn_point: Node2D   # drag the SpawnPoint node in the Inspector
+
+# Rubber band effect after releasing slingshot
+@export var bounce_time: float = 0.2  # how fast it snaps back
+@export var bounce_ease: Tween.EaseType = Tween.EASE_OUT
+@export var bounce_trans: Tween.TransitionType = Tween.TRANS_BOUNCE
 
 var start_pos: Vector2
 var dragging: bool = false
 var pixel_width: float = texture.get_width() * scale.x
 var pixel_height: float = texture.get_height() * scale.y
+var original_scale: Vector2
 
+func _ready() -> void:
+	original_scale = scale 
+	
 func _launch_projectile():
 	var current_pos = get_global_mouse_position()
 	var drag_vector = start_pos - current_pos
@@ -40,7 +52,8 @@ func _input(event):
 				if dragging:
 					_launch_projectile()
 				dragging = false
-				scale = Vector2(1, 1) # reset scale if you want
+				_tween_back()
+				
 	elif event is InputEventMouseMotion and dragging:
 		var current_pos = get_global_mouse_position()
 		var drag_vector = start_pos - current_pos
@@ -60,3 +73,10 @@ func _input(event):
 		
 		# Rotate to face the mouse drag
 		rotation = angle
+
+func _tween_back():
+	var tween = create_tween()
+	tween.tween_property(self, "scale", original_scale, bounce_time) \
+		.set_ease(bounce_ease).set_trans(bounce_trans)
+	tween.tween_property(self, "rotation", 0.0, bounce_time) \
+		.set_ease(bounce_ease).set_trans(bounce_trans)

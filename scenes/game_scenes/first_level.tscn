@@ -4,41 +4,34 @@
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
 [ext_resource type="PackedScene" uid="uid://87wmj0jocvvc" path="res://resources/prefabs/ball.tscn" id="3_qep1h"]
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_yiytm"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yiytm"]
-rough = true
-absorbent = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiytm"]
-size = Vector2(237.5, 27)
+[ext_resource type="PackedScene" uid="uid://b62sqqcrowjie" path="res://resources/prefabs/wall.tscn" id="5_s7feg"]
+[ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
 
 [node name="FirstLevel" type="Node2D"]
 
 [node name="Slingshot" type="Sprite2D" parent="." node_paths=PackedStringArray("spawn_point")]
 position = Vector2(356, 311)
+scale = Vector2(0.240001, 1)
 texture = ExtResource("1_ua0nc")
 centered = false
 offset = Vector2(-98, -13)
 script = ExtResource("2_qep1h")
 projectile_scene = ExtResource("3_qep1h")
-spawn_point = NodePath("../Sprite2D")
+spawn_point = NodePath("../Ball Position")
+bounce_time = 1.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Ball Position" type="Sprite2D" parent="."]
 position = Vector2(412, 314)
 texture = ExtResource("4_yiytm")
 
-[node name="Obstacle" type="RigidBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_yiytm")
-can_sleep = false
-freeze = true
+[node name="Mapa" type="Node" parent="."]
 
-[node name="Placeholder" type="Sprite2D" parent="Obstacle"]
-position = Vector2(763.5, 296)
-rotation = 1.5708
-scale = Vector2(2.47, 1)
-texture = ExtResource("1_ua0nc")
+[node name="Obstacle" parent="Mapa" instance=ExtResource("5_s7feg")]
+position = Vector2(943, 101)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(765.5, 294.25)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_yiytm")
+[node name="Obstacle2" parent="Mapa" instance=ExtResource("5_s7feg")]
+position = Vector2(616, 514)
+rotation = 4.71239
+
+[node name="Pad" parent="." instance=ExtResource("6_m8mph")]
+position = Vector2(735, 395)
