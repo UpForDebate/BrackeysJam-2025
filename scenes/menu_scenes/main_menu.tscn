@@ -76,7 +76,7 @@ focus_neighbor_right = NodePath("../../../RSide/SettingsButton")
 focus_neighbor_bottom = NodePath("../ContinueButton")
 focus_next = NodePath("../ContinueButton")
 focus_previous = NodePath("../QuitButton")
-text = "PLay"
+text = "Play"
 
 [node name="ContinueButton" type="Button" parent="MarginContainer/HBoxContainer/LSide/GameOptions"]
 visible = false
