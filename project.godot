@@ -22,6 +22,7 @@ InputCheck="*res://scripts/autoloads/input_checker.gd"
 SaveManager="*res://scripts/autoloads/save_manager.gd"
 SettingsDataContainer="*res://scripts/autoloads/settings_data_container.gd"
 SettingsSignalBus="*res://scripts/autoloads/settings_signal_bus.gd"
+GlobalSignalBus="*res://scripts/autoloads/global_signal_bus.gd"
 
 [input]
 
