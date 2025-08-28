@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuaymmwemlfws"]
+[gd_scene load_steps=9 format=3 uid="uid://cuaymmwemlfws"]
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_ua0nc"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b62sqqcrowjie" path="res://resources/prefabs/wall.tscn" id="5_s7feg"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
 [ext_resource type="PackedScene" uid="uid://b2wvw67qb1x8n" path="res://resources/sprites/obstacles/spikes.tscn" id="7_ff2ft"]
+[ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="8_m6v08"]
 
 [node name="FirstLevel" type="Node2D"]
 
@@ -28,14 +29,19 @@ texture = ExtResource("4_yiytm")
 [node name="Mapa" type="Node" parent="."]
 
 [node name="Obstacle" parent="Mapa" instance=ExtResource("5_s7feg")]
-position = Vector2(943, 101)
+visible = false
+position = Vector2(1041, 164)
+rotation = 0.261799
 
-[node name="Obstacle2" parent="Mapa" instance=ExtResource("5_s7feg")]
-position = Vector2(616, 514)
-rotation = 4.71239
+[node name="Spikes" parent="Mapa/Obstacle" instance=ExtResource("7_ff2ft")]
+position = Vector2(-27, 41)
+rotation = -1.5695
 
-[node name="Pad" parent="." instance=ExtResource("6_m8mph")]
-position = Vector2(735, 395)
+[node name="Pad2" parent="." instance=ExtResource("6_m8mph")]
+position = Vector2(914, 307)
+rotation = -1.309
+multiplier = 200.0
 
-[node name="Spikes" parent="." instance=ExtResource("7_ff2ft")]
-position = Vector2(916, 142)
+[node name="Cookie" parent="." instance=ExtResource("8_m6v08")]
+position = Vector2(395, 158)
+next_level = "res://scenes/game_scenes/second_level.tscn"
