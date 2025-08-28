@@ -24,6 +24,10 @@ SettingsDataContainer="*res://scripts/autoloads/settings_data_container.gd"
 SettingsSignalBus="*res://scripts/autoloads/settings_signal_bus.gd"
 GlobalSignalBus="*res://scripts/autoloads/global_signal_bus.gd"
 
+[editor]
+
+movie_writer/movie_file="C:/dev/GodotMovies/BrackeysTests.avi"
+
 [input]
 
 game_debug={
