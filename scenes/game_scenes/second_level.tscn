@@ -38,3 +38,10 @@ rotation = 0.261799
 [node name="Spikes" parent="Mapa/Obstacle" instance=ExtResource("8_ousjt")]
 position = Vector2(-27, 41)
 rotation = -1.5695
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mapa"]
+offset_left = 482.0
+offset_top = 165.0
+offset_right = 656.0
+offset_bottom = 205.0
+text = "Second Level"
