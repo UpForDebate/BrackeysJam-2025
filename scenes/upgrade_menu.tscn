@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://pvpg5fui31mu"]
+
+[ext_resource type="Script" uid="uid://cv2kqv3k2munf" path="res://scripts/systems/boons/boon_menu.gd" id="1_e3qxy"]
+[ext_resource type="Resource" uid="uid://50r7scppnfjt" path="res://resources/boons/health_boon.tres" id="2_ksfom"]
+[ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_o1026"]
+[ext_resource type="Script" uid="uid://8rv86jihdvwa" path="res://scripts/systems/boons/player_stats.gd" id="3_0e30j"]
+[ext_resource type="Resource" uid="uid://elm0erjl4hx7" path="res://resources/boons/speed_boon.tres" id="3_jkuc8"]
+[ext_resource type="Resource" uid="uid://vd3wmx6s5pis" path="res://resources/boons/spikes_boon.tres" id="4_1eg5u"]
+[ext_resource type="Script" uid="uid://df3w2ny0yf0ve" path="res://scripts/systems/boons/stat_test.gd" id="5_he6dt"]
+[ext_resource type="Resource" uid="uid://cx4sgmmjtht70" path="res://resources/boons/ohko_boon.tres" id="5_o1026"]
+[ext_resource type="Resource" uid="uid://cocdb8im641ns" path="res://resources/stat_tests/health.tres" id="6_3rs5v"]
+[ext_resource type="Resource" uid="uid://b1fg8iggcycop" path="res://resources/boons/bounce_pads_boon.tres" id="6_2218r"]
+[ext_resource type="Resource" uid="uid://u148n08geee" path="res://resources/stat_tests/speed.tres" id="7_h8ffg"]
+[ext_resource type="Resource" uid="uid://cypf1xgn5x8u" path="res://resources/stat_tests/spikes_chance.tres" id="8_1eg5u"]
+[ext_resource type="Resource" uid="uid://raosqim08s7g" path="res://resources/boons/bounce_pads_high_boon.tres" id="8_2218r"]
+[ext_resource type="Resource" uid="uid://xoxalu1m43hp" path="res://resources/stat_tests/bounce_pads_chance.tres" id="9_o1026"]
+[ext_resource type="Resource" uid="uid://bkopvip74qu8s" path="res://resources/stat_tests/ohko.tres" id="10_2218r"]
+
+[node name="BoonMenu" type="Control" node_paths=PackedStringArray("player_stats")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e3qxy")
+available_boons = Array[ExtResource("2_o1026")]([ExtResource("2_ksfom"), ExtResource("3_jkuc8"), ExtResource("4_1eg5u"), ExtResource("5_o1026"), ExtResource("6_2218r"), ExtResource("8_2218r")])
+player_stats = NodePath("Player")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("3_0e30j")
+stats = Array[ExtResource("5_he6dt")]([ExtResource("6_3rs5v"), ExtResource("7_h8ffg"), ExtResource("8_1eg5u"), ExtResource("10_2218r"), ExtResource("9_o1026")])
+metadata/_custom_type_script = "uid://8rv86jihdvwa"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Select the Boon!"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -20.0
+offset_right = 192.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="HealthUpgradeBtn" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Health Upgrade"
+
+[node name="SpeedUpgradeBtn" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Speed Upgrade"
+
+[node name="SpikeUpgradeBtn" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Spike Upgrade"
+
+[node name="OHKOUpgradeBtn" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "OHKO Upgrade"
+
+[node name="BouncePadUpgradeBtn" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Bounce Pad Upgrade"
+
+[node name="BouncePadUpgradeBtn+" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Bounce Pad Upgrade+"
+
+[connection signal="pressed" from="GridContainer/HealthUpgradeBtn" to="." method="_on_health_upgrade_btn_pressed"]
+[connection signal="pressed" from="GridContainer/SpeedUpgradeBtn" to="." method="_on_speed_upgrade_btn_pressed"]
+[connection signal="pressed" from="GridContainer/SpikeUpgradeBtn" to="." method="_on_spike_upgrade_btn_pressed"]
+[connection signal="pressed" from="GridContainer/OHKOUpgradeBtn" to="." method="on_ohko_upgrade_btn_pressed"]
+[connection signal="pressed" from="GridContainer/BouncePadUpgradeBtn" to="." method="on_bounce_pad_upgrade_btn_pressed"]
+[connection signal="pressed" from="GridContainer/BouncePadUpgradeBtn+" to="." method="on_bounce_pad_big_upgrade_btn_pressed"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatTest" load_steps=2 format=3 uid="uid://cypf1xgn5x8u"]
+
+[ext_resource type="Script" uid="uid://df3w2ny0yf0ve" path="res://scripts/systems/boons/stat_test.gd" id="1_v6k54"]
+
+[resource]
+script = ExtResource("1_v6k54")
+stat_type = 2
+base_stat_value = 1.0
+stat_value = 1.0
+metadata/_custom_type_script = "uid://df3w2ny0yf0ve"
