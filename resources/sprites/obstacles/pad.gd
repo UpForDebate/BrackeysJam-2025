@@ -1,5 +1,6 @@
 extends Sprite2D
 
+@export var force: Vector2 =  Vector2(-10, -10)
 @export var multiplier: float = 10.0
 @export var show_debug_gizmo: bool = true
 
@@ -9,18 +10,27 @@ func _ready():
 		queue_redraw()
 
 func _draw():
-	var dir = -transform.y.normalized()
+	var dir = force.normalized() #-transform.y.normalized()
 	var length = multiplier * 10
 	draw_line(Vector2.ZERO, dir * length, Color.RED, 2.0)
 
 	
 func _on_body_entered(body: Node):
-	var bounce = -transform.y.normalized() * multiplier 
-	if body is RigidBody2D and body.has_meta("isPlayer"):
+	var bounce = force.normalized() * multiplier # -transform.y.normalized() * multiplier 
+	if body is PlayerRagdoll :
 		print("Collision detected with player")
-		body.apply_impulse(bounce)
+		print(bounce)
+		# body.push_away()
+		print(body.name)
+		print(body.linear_velocity)
+		body.linear_velocity =  body.linear_velocity * force.normalized() * multiplier 
+		print(body.linear_velocity)
+
+		# body.apply_central_impulse(bounce)
 	elif body.has_method("apply_central_impulse"): 
-		body.apply_central_impulse(bounce)
+		pass
+		# body.apply_central_impulse(bounce)
 	elif "velocity" in body: 
+		pass
 		# If your player is a CharacterBody2D
-		body.velocity = bounce
+		# body.velocity = bounce

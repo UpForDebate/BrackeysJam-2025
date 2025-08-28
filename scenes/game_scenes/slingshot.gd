@@ -39,7 +39,7 @@ func _launch_projectile():
 	get_parent().add_child(projectile)
 	
 	# Apply impulse at its center of mass
-	projectile.apply_impulse(launch_force)
+	projectile.apply_central_impulse(launch_force)
 	
 	
 func _input(event):
