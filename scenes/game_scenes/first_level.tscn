@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuaymmwemlfws"]
+[gd_scene load_steps=8 format=4 uid="uid://cuaymmwemlfws"]
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_ua0nc"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
 [ext_resource type="PackedScene" uid="uid://87wmj0jocvvc" path="res://resources/prefabs/ball.tscn" id="3_qep1h"]
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_yiytm"]
-[ext_resource type="PackedScene" uid="uid://b62sqqcrowjie" path="res://resources/prefabs/wall.tscn" id="5_s7feg"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
 [ext_resource type="PackedScene" uid="uid://b2wvw67qb1x8n" path="res://resources/sprites/obstacles/spikes.tscn" id="7_ff2ft"]
+[ext_resource type="TileSet" uid="uid://dy8ug0p2tor1" path="res://resources/level_tile_set.tres" id="7_m6v08"]
 
 [node name="FirstLevel" type="Node2D"]
 
@@ -27,15 +27,12 @@ texture = ExtResource("4_yiytm")
 
 [node name="Mapa" type="Node" parent="."]
 
-[node name="Obstacle" parent="Mapa" instance=ExtResource("5_s7feg")]
-position = Vector2(943, 101)
-
-[node name="Obstacle2" parent="Mapa" instance=ExtResource("5_s7feg")]
-position = Vector2(616, 514)
-rotation = 4.71239
-
 [node name="Pad" parent="." instance=ExtResource("6_m8mph")]
-position = Vector2(735, 395)
+position = Vector2(622, 418)
 
 [node name="Spikes" parent="." instance=ExtResource("7_ff2ft")]
-position = Vector2(916, 142)
+position = Vector2(871, 141)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAAgAAQADAAAAAAAGAAgAAQADAAAAAAAHAAgAAQADAAAAAAAIAAgAAQADAAAAAAAJAAgAAQADAAAAAAAKAAgAAQADAAAAAAALAAgAAQADAAAAAAAMAAgAAQADAAAAAAANAAgAAQADAAAAAAAOAAgAAQACAAEAAAAPAAgAAQACAAEAAAAQAAgAAQACAAEAAAARAAgAAQACAAEAAAASAAgAAQACAAEAAAATAAgAAQACAAEAAAAOAAAAAQACAAEAAAAOAAEAAQACAAEAAAAOAAIAAQACAAEAAAAOAAMAAQACAAEAAAAOAAQAAQACAAEAAAAOAAUAAQACAAEAAAAOAAYAAQACAAEAAAAOAAcAAQACAAEAAAAPAAAAAQACAAEAAAAPAAEAAQACAAEAAAAPAAIAAQACAAEAAAAPAAMAAQACAAEAAAAPAAQAAQACAAEAAAAPAAUAAQACAAEAAAAPAAYAAQACAAEAAAAPAAcAAQACAAEAAAAQAAAAAQACAAEAAAAQAAEAAQACAAEAAAAQAAIAAQACAAEAAAAQAAMAAQACAAEAAAAQAAQAAQACAAEAAAAQAAUAAQACAAEAAAAQAAYAAQACAAEAAAAQAAcAAQACAAEAAAARAAAAAQACAAEAAAARAAEAAQACAAEAAAARAAIAAQACAAEAAAARAAMAAQACAAEAAAARAAQAAQACAAEAAAARAAUAAQACAAEAAAARAAYAAQACAAEAAAARAAcAAQACAAEAAAASAAAAAQACAAEAAAASAAEAAQACAAEAAAASAAIAAQACAAEAAAASAAMAAQACAAEAAAASAAQAAQACAAEAAAASAAUAAQACAAEAAAASAAYAAQACAAEAAAASAAcAAQACAAEAAAATAAAAAQACAAEAAAATAAEAAQACAAEAAAATAAIAAQACAAEAAAATAAMAAQACAAEAAAATAAQAAQACAAEAAAATAAUAAQACAAEAAAATAAYAAQACAAEAAAATAAcAAQACAAEAAAAJAAcAAQAHAAQAAAAJAAYAAQAHAAQAAAAJAAUAAQAGAAQAAAAMAAYAAQAJAAQAAAAMAAcAAQAJAAUAAAAGAAcAAQABAAYAAAAGAAYAAQABAAQAAAAGAAIAAQALAAAAAAAHAAIAAQAIAAEAAAAIAAIAAQALAAEAAAA=")
+tile_set = ExtResource("7_m6v08")
