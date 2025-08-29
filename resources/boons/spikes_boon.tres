@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Boon" load_steps=2 format=3 uid="uid://vd3wmx6s5pis"]
+
+[ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="1_7l06l"]
+
+[resource]
+script = ExtResource("1_7l06l")
+boon_text = "Spikes"
+boon_type = 2
+modifier_type = 0
+stat_modifier = 1
+boon_duration = -1
+base_boon_duration = -1
+metadata/_custom_type_script = "uid://ccea030es1ir2"

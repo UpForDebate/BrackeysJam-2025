@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Boon" load_steps=2 format=3 uid="uid://raosqim08s7g"]
+
+[ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="1_4k6c8"]
+
+[resource]
+script = ExtResource("1_4k6c8")
+boon_text = "Bounce Update Plus"
+boon_type = 4
+modifier_type = 2
+stat_modifier = 10
+boon_duration = 5
+base_boon_duration = 5
+metadata/_custom_type_script = "uid://ccea030es1ir2"

@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://0hu10u23s3nm"]
+
+[ext_resource type="Texture2D" uid="uid://behqagqwb1bi6" path="res://resources/sprites/character/candyman/Player_Charcater_BGJ_Cabeça.png" id="1_35lmt"]
+[ext_resource type="Script" uid="uid://r05o5wlqoiyi" path="res://resources/prefabs/candyman_physics.gd" id="1_kc73y"]
+[ext_resource type="Texture2D" uid="uid://djkjeamau51pu" path="res://resources/sprites/character/candyman/Player_Charcater_BGJ_Tronco.png" id="2_kc73y"]
+[ext_resource type="Texture2D" uid="uid://cyfhku4h4eo5f" path="res://resources/sprites/character/candyman/Player_Charcater_BGJ_Perna-Esquerda.png" id="3_kpd7g"]
+[ext_resource type="Texture2D" uid="uid://chvja6hbctbk2" path="res://resources/sprites/character/candyman/Player_Charcater_BGJ_Pe-Esquerdo.png" id="4_0kpap"]
+[ext_resource type="Texture2D" uid="uid://bqwsigvpmy7ys" path="res://resources/sprites/character/candyman/Player_Charcater_BGJ_Pernas-Direita.png" id="5_bojrs"]
+[ext_resource type="Texture2D" uid="uid://cv13cqdjdwqfh" path="res://resources/sprites/character/candyman/Player_Charcater_BGJ_Pe-Direito.png" id="6_rqh4e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_om28g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44jwm"]
+radius = 9.0
+height = 84.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfrhu"]
+size = Vector2(11, 30)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xndjr"]
+radius = 8.0
+height = 82.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipcht"]
+size = Vector2(11.9999, 33.0001)
+
+[node name="Torso" type="RigidBody2D"]
+script = ExtResource("1_kc73y")
+metadata/isPlayer = true
+
+[node name="PlayerCharcaterBgjTronco" type="Sprite2D" parent="."]
+position = Vector2(6, -2)
+texture = ExtResource("2_kc73y")
+
+[node name="TorsoCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-69.4854, -44.1492)
+scale = Vector2(0.283366, 0.283366)
+polygon = PackedVector2Array(208, 2, 293, 3, 308, 26, 328, 86, 322, 234, 296, 290, 227, 299, 204, 284)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-343, -330)
+color = Color(1, 1, 1, 0.470588)
+offset = Vector2(313.07, 59.71)
+texture = SubResource("NoiseTexture2D_om28g")
+polygon = PackedVector2Array(-3, -2, 53, -2, 70, 109, 179, 111, 176, 158, 54, 161, 53, 221, 69, 249, 66, 266, 9, 260)
+
+[node name="Head" type="RigidBody2D" parent="."]
+position = Vector2(1, -72)
+mass = 0.001
+
+[node name="HeadCollision" type="CollisionPolygon2D" parent="Head"]
+position = Vector2(-15, 21)
+scale = Vector2(0.295191, 0.25572)
+polygon = PackedVector2Array(-4, -2, 13, 18, 36, 29, 59, 31, 75, 27, 96, 15, 109, -4, 113, -21, 123, -22, 89, -73, 57, -163, -7, -149, -4, -59, -33, 0)
+
+[node name="PlayerCharcaterBgjCabeça" type="Sprite2D" parent="Head"]
+position = Vector2(-2, 3)
+texture = ExtResource("1_35lmt")
+
+[node name="Left Leg" type="RigidBody2D" parent="."]
+position = Vector2(43, 39)
+mass = 0.001
+
+[node name="LLeg-Collision" type="CollisionShape2D" parent="Left Leg"]
+position = Vector2(22, -1)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_44jwm")
+
+[node name="PlayerCharcaterBgjPerna-esquerda" type="Sprite2D" parent="Left Leg"]
+position = Vector2(23, -1)
+texture = ExtResource("3_kpd7g")
+
+[node name="Left Foot" type="RigidBody2D" parent="Left Leg"]
+position = Vector2(66, 0)
+mass = 0.001
+
+[node name="LFootCollision" type="CollisionShape2D" parent="Left Leg/Left Foot"]
+position = Vector2(9, -1)
+shape = SubResource("RectangleShape2D_sfrhu")
+
+[node name="PlayerCharcaterBgjPe-esquerdo" type="Sprite2D" parent="Left Leg/Left Foot"]
+position = Vector2(5, 0)
+texture = ExtResource("4_0kpap")
+
+[node name="Right Leg" type="RigidBody2D" parent="."]
+position = Vector2(1, 65)
+mass = 0.001
+
+[node name="PlayerCharcaterBgjPernas-direita" type="Sprite2D" parent="Right Leg"]
+position = Vector2(-3, 28)
+texture = ExtResource("5_bojrs")
+
+[node name="RLeg-Collision" type="CollisionShape2D" parent="Right Leg"]
+position = Vector2(-3, 28)
+shape = SubResource("CapsuleShape2D_xndjr")
+
+[node name="Right Foot" type="RigidBody2D" parent="Right Leg"]
+position = Vector2(2, 71)
+mass = 0.001
+
+[node name="PlayerCharcaterBgjPe-direito" type="Sprite2D" parent="Right Leg/Right Foot"]
+position = Vector2(0, 8)
+texture = ExtResource("6_rqh4e")
+
+[node name="RFoot-Collision" type="CollisionShape2D" parent="Right Leg/Right Foot"]
+position = Vector2(2.50003, 11.9999)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_ipcht")
+
+[node name="Joints" type="Node2D" parent="."]
+position = Vector2(2, 119)
+
+[node name="Head - Torso" type="PinJoint2D" parent="Joints"]
+position = Vector2(1, -161)
+node_a = NodePath("../../Head")
+node_b = NodePath("../..")
+angular_limit_lower = -0.261799
+angular_limit_upper = 0.261799
+
+[node name="LFoot - LLeg" type="PinJoint2D" parent="Joints"]
+position = Vector2(105, -81)
+node_a = NodePath("../../Left Leg/Left Foot")
+node_b = NodePath("../../Left Leg")
+angular_limit_lower = -0.598648
+angular_limit_upper = 0.23911
+
+[node name="RFoot - RLeg" type="PinJoint2D" parent="Joints"]
+position = Vector2(1, 20)
+node_a = NodePath("../../Right Leg/Right Foot")
+node_b = NodePath("../../Right Leg")
+angular_limit_lower = -0.523599
+angular_limit_upper = 0.359538
+
+[node name="LLeg - Torso" type="PinJoint2D" parent="Joints"]
+position = Vector2(19, -81)
+node_a = NodePath("../../Left Leg")
+node_b = NodePath("../..")
+angular_limit_lower = -1.01753
+angular_limit_upper = 1.25664
+
+[node name="RLeg - Torso" type="PinJoint2D" parent="Joints"]
+position = Vector2(-5, -70)
+node_a = NodePath("../../Right Leg")
+node_b = NodePath("../..")
+angular_limit_lower = -0.657989
+angular_limit_upper = 1.5132

@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://wt7f30xrwu2d"]
+
+[ext_resource type="Script" uid="uid://dvj53ggnntfw5" path="res://scripts/stats/stat_manager.gd" id="1_s4kcw"]
+[ext_resource type="Script" uid="uid://cmpaopsvuubpd" path="res://scripts/stats/stat.gd" id="2_c2l57"]
+[ext_resource type="Resource" uid="uid://cssf5wpr2a3nb" path="res://resources/stats/max_bounces.tres" id="3_lxakw"]
+[ext_resource type="Resource" uid="uid://djdxg7w7qeq7d" path="res://resources/stats/bounces.tres" id="4_gryyh"]
+
+[node name="StatManager" type="Node2D"]
+script = ExtResource("1_s4kcw")
+initStats = Array[ExtResource("2_c2l57")]([ExtResource("4_gryyh"), ExtResource("3_lxakw")])

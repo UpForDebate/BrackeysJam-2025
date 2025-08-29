@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Boon" load_steps=2 format=3 uid="uid://50r7scppnfjt"]
+
+[ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="1_t1tfw"]
+
+[resource]
+script = ExtResource("1_t1tfw")
+boon_text = "Health"
+boon_type = 0
+modifier_type = 0
+stat_modifier = 1
+boon_duration = 3
+base_boon_duration = 3
+metadata/_custom_type_script = "uid://ccea030es1ir2"

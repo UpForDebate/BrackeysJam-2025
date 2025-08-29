@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://baj344bonl1kf"]
+
+[ext_resource type="Texture2D" uid="uid://blynwvvw2e4jq" path="res://resources/sprites/items/cookie-vector.png" id="1_jxpp6"]
+[ext_resource type="Script" uid="uid://ch780o8yl6vwu" path="res://scenes/game_scenes/cookie.gd" id="2_qrrfr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aneg2"]
+
+[node name="Cookie" type="Sprite2D"]
+scale = Vector2(0.169411, 0.169411)
+texture = ExtResource("1_jxpp6")
+script = ExtResource("2_qrrfr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(28.61, 28.61)
+shape = SubResource("CircleShape2D_aneg2")
