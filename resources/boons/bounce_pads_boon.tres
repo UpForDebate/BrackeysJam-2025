@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="1_yn8om"]
 
+
 [resource]
 script = ExtResource("1_yn8om")
 boon_text = "Bounce Pads"

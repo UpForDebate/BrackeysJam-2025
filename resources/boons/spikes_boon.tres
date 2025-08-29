@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_7l06l")
 boon_text = "Spikes"
-boon_type = 2
+boon_type = 3
 modifier_type = 0
-stat_modifier = 1
-boon_duration = -1
+stat_modifier = -1
+current_boon_duration = -1
 base_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
