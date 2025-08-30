@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cmpaopsvuubpd" path="res://scripts/systems/stats/stat.gd" id="1_00bak"]
 
-
 [resource]
 script = ExtResource("1_00bak")
 statType = 5
-statValue = 1.0
+baseValue = 4.0
 metadata/_custom_type_script = "uid://cmpaopsvuubpd"

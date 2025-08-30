@@ -1,10 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://pvpg5fui31mu"]
+[gd_scene load_steps=8 format=3 uid="uid://pvpg5fui31mu"]
 
 [ext_resource type="Resource" uid="uid://50r7scppnfjt" path="res://resources/boons/health_boon.tres" id="2_ksfom"]
 [ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_o1026"]
 [ext_resource type="Resource" uid="uid://vd3wmx6s5pis" path="res://resources/boons/spikes_boon.tres" id="4_1eg5u"]
 [ext_resource type="PackedScene" uid="uid://rv8l7047wj6h" path="res://resources/prefabs/BoonBtn.tscn" id="9_he6dt"]
 [ext_resource type="PackedScene" uid="uid://wt7f30xrwu2d" path="res://scenes/stats/stat_manager.tscn" id="10_3rs5v"]
+
+[sub_resource type="Resource" id="Resource_ixicc"]
+script = ExtResource("2_o1026")
+boon_text = "Lives"
+boon_type = 0
+modifier_type = 1
+stat_modifier = 3
+base_boon_duration = 3
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
+[sub_resource type="Resource" id="Resource_6vqdt"]
+script = ExtResource("2_o1026")
+boon_text = "Lives"
+boon_type = 0
+modifier_type = 2
+stat_modifier = 1
+base_boon_duration = -1
+metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [node name="BoonMenu" type="Control"]
 layout_mode = 3
@@ -13,15 +31,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.262745, 0.262745, 0.262745, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -53,13 +62,13 @@ columns = 3
 [node name="HealthBoonBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager") instance=ExtResource("9_he6dt")]
 layout_mode = 2
 text = "Health Upgrade"
-available_boons = Array[ExtResource("2_o1026")]([ExtResource("2_ksfom")])
+available_boons = Array[ExtResource("2_o1026")]([ExtResource("2_ksfom"), SubResource("Resource_ixicc")])
 stats_manager = NodePath("../../StatManager")
 
 [node name="SpikesChanceBoonBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager") instance=ExtResource("9_he6dt")]
 layout_mode = 2
 text = "Spikes Chance Upgrade"
-available_boons = Array[ExtResource("2_o1026")]([ExtResource("2_ksfom"), ExtResource("4_1eg5u")])
+available_boons = Array[ExtResource("2_o1026")]([SubResource("Resource_6vqdt"), ExtResource("4_1eg5u")])
 stats_manager = NodePath("../../StatManager")
 
 [node name="Button" type="Button" parent="GridContainer"]
