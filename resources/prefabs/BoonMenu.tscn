@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://df1bj1q7kgto1"]
+
+[ext_resource type="PackedScene" uid="uid://rv8l7047wj6h" path="res://resources/prefabs/BoonBtn.tscn" id="1_8mus1"]
+[ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_ciwun"]
+[ext_resource type="PackedScene" uid="uid://dje5eqwldi03p" path="res://resources/prefabs/StatsManager.tscn" id="3_ciwun"]
+
+[sub_resource type="Resource" id="Resource_1cmoo"]
+script = ExtResource("2_ciwun")
+boon_text = "Slingshot Force"
+boon_type = 5
+modifier_type = 0
+stat_modifier = 2
+base_boon_duration = 2
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
+[sub_resource type="Resource" id="Resource_qjpfi"]
+script = ExtResource("2_ciwun")
+boon_text = "Jump Pad Force"
+boon_type = 4
+modifier_type = 0
+stat_modifier = 1
+base_boon_duration = 2
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.113725, 0.458824, 0.301961)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -15.5
+offset_right = 43.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="SlingshotForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager", "canvas") instance=ExtResource("1_8mus1")]
+process_mode = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Slingshot Upgrade"
+available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_1cmoo")])
+stats_manager = NodePath("../../StatsManager")
+canvas = NodePath("../..")
+
+[node name="PadForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager", "canvas") instance=ExtResource("1_8mus1")]
+process_mode = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Pad Force Upgrade"
+available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_qjpfi")])
+stats_manager = NodePath("../../StatsManager")
+canvas = NodePath("../..")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Select a Boon!"
+
+[node name="StatsManager" parent="." instance=ExtResource("3_ciwun")]

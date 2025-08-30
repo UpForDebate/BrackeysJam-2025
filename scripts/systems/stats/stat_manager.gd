@@ -25,18 +25,40 @@ func apply_boon(boon: BoonFinal):
 func recalc_stats():
 	#reset base stat to calculate all
 	reset_stats()
-
+	
+	var additives: Array[BoonFinal] = []
+	var multipliers: Array[BoonFinal] = []
+	var overrides: Array[BoonFinal] = []
+	
 	#apply boons
 	for boon in active_boons:
-		for stat in initStats:
-			if boon.boon_type == stat.statType:
-				match boon.modifier_type:
-					boon.ModifierType.ADDITIVE:
-						stat.currentValue += boon.stat_modifier
-					boon.ModifierType.MULTIPLIER:
-						stat.currentValue *= boon.stat_modifier
-					boon.ModifierType.OVERRIDE:
-						stat.currentValue = boon.stat_modifier
+		match boon.modifier_type:
+			boon.ModifierType.ADDITIVE:
+				additives.append(boon)
+			boon.ModifierType.MULTIPLIER:
+				multipliers.append(boon)
+			boon.ModifierType.OVERRIDE:
+				overrides.append(boon)
+						
+	for boon in multipliers:
+		handle_boon(boon)
+	
+	for boon in additives:
+		handle_boon(boon)
+	
+	for boon in overrides:
+		handle_boon(boon)
+
+func handle_boon(boon: BoonFinal) -> void:
+	for stat in initStats:
+		if boon.boon_type == stat.statType:
+			match boon.modifier_type:
+				boon.ModifierType.ADDITIVE:
+					stat.currentValue += boon.stat_modifier
+				boon.ModifierType.MULTIPLIER:
+					stat.currentValue *= boon.stat_modifier
+				boon.ModifierType.OVERRIDE:
+					stat.currentValue = boon.stat_modifier
 
 func advance_level():
 	# Tick down durations

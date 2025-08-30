@@ -7,6 +7,7 @@ extends Sprite2D
 @export var projectile_scene: PackedScene
 @export var force_multiplier: float = 10.0  # tweak this for power
 @export var spawn_point: Node2D   # drag the SpawnPoint node in the Inspector
+@export var stats_manager : StatManager
 
 # Rubber band effect after releasing slingshot
 @export var bounce_time: float = 0.2  # how fast it snaps back
@@ -31,7 +32,7 @@ func _launch_projectile():
 	
 	# Direction of launch = opposite of drag
 	var launch_dir = drag_vector.normalized()
-	var launch_force = launch_dir * stretch_length * force_multiplier
+	var launch_force = launch_dir * stretch_length * stats_manager.initStats[5].currentValue
 	
 	# Instance the projectile
 	var projectile = projectile_scene.instantiate() as RigidBody2D

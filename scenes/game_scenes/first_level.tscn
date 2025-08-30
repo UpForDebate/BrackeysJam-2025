@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuaymmwemlfws"]
+[gd_scene load_steps=9 format=3 uid="uid://cuaymmwemlfws"]
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_ua0nc"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
-[ext_resource type="PackedScene" uid="uid://0hu10u23s3nm" path="res://resources/prefabs/candyman.tscn" id="3_m6v08"]
+[ext_resource type="PackedScene" path="res://resources/prefabs/candyman.tscn" id="3_m6v08"]
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_yiytm"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
+[ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="7_37fev"]
+[ext_resource type="PackedScene" uid="uid://dje5eqwldi03p" path="res://resources/prefabs/StatsManager.tscn" id="8_aneg2"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="8_m6v08"]
 
 [node name="FirstLevel" type="Node2D"]
 
-[node name="Slingshot" type="Sprite2D" parent="." node_paths=PackedStringArray("spawn_point")]
+[node name="Slingshot" type="Sprite2D" parent="." node_paths=PackedStringArray("spawn_point", "stats_manager")]
 position = Vector2(356, 311)
 scale = Vector2(0.240001, 1)
 texture = ExtResource("1_ua0nc")
@@ -17,8 +19,8 @@ centered = false
 offset = Vector2(-98, -13)
 script = ExtResource("2_qep1h")
 projectile_scene = ExtResource("3_m6v08")
-force_multiplier = 5.0
 spawn_point = NodePath("../Mapa/Spawn Position")
+stats_manager = NodePath("../StatsManager")
 bounce_time = 1.0
 
 [node name="Ball Position" type="Sprite2D" parent="."]
@@ -28,11 +30,11 @@ texture = ExtResource("4_yiytm")
 
 [node name="Mapa" type="Node" parent="."]
 
-[node name="Pad2" parent="Mapa" instance=ExtResource("6_m8mph")]
+[node name="Pad2" parent="Mapa" node_paths=PackedStringArray("stats_manager") instance=ExtResource("6_m8mph")]
 position = Vector2(914, 307)
 rotation = -1.309
 force = Vector2(-1, -1)
-multiplier = 2.0
+stats_manager = NodePath("../../StatsManager")
 
 [node name="Cookie" parent="Mapa" instance=ExtResource("8_m6v08")]
 position = Vector2(232, 214)
@@ -40,3 +42,7 @@ next_level = "res://scenes/game_scenes/second_level.tscn"
 
 [node name="Spawn Position" type="Marker2D" parent="Mapa"]
 position = Vector2(400, 317)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_37fev")]
+
+[node name="StatsManager" parent="." instance=ExtResource("8_aneg2")]

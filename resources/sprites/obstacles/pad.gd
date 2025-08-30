@@ -3,6 +3,7 @@ extends Sprite2D
 @export var force: Vector2 =  Vector2(-10, -10)
 @export var multiplier: float = 10.0
 @export var show_debug_gizmo: bool = true
+@export var stats_manager : StatManager
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -11,7 +12,7 @@ func _ready():
 
 func _draw():
 	var dir = force.normalized() #-transform.y.normalized()
-	var length = multiplier * 10
+	var length = stats_manager.initStats[4].currentValue * 10
 	draw_line(Vector2.ZERO, dir * length, Color.RED, 2.0)
 
 	
