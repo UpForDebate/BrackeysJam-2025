@@ -3,6 +3,7 @@ extends Sprite2D
 @export var force: Vector2 =  Vector2(-10, -10)
 @export var multiplier: float = 10.0
 @export var show_debug_gizmo: bool = true
+@export var bump_sfx: String =  "bounce"
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -25,7 +26,7 @@ func _on_body_entered(body: Node):
 		print(body.linear_velocity)
 		body.linear_velocity =  body.linear_velocity * force.normalized() * multiplier 
 		print(body.linear_velocity)
-
+		AudioManager.play_sfx(bump_sfx)
 		# body.apply_central_impulse(bounce)
 	elif body.has_method("apply_central_impulse"): 
 		pass
