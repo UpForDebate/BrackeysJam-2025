@@ -35,7 +35,7 @@ func _launch_projectile():
 	
 	# Instance the projectile
 	var projectile = projectile_scene.instantiate() as RigidBody2D
-	projectile.position = spawn_point.position	
+	projectile.position = spawn_point.position
 	get_parent().add_child(projectile)
 	
 	# Apply impulse at its center of mass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://df1bj1q7kgto1"]
+[gd_scene load_steps=7 format=3 uid="uid://df1bj1q7kgto1"]
 
 [ext_resource type="PackedScene" uid="uid://rv8l7047wj6h" path="res://resources/prefabs/BoonBtn.tscn" id="1_8mus1"]
 [ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_ciwun"]
@@ -12,13 +12,31 @@ stat_modifier = 2
 base_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
+[sub_resource type="Resource" id="Resource_8mus1"]
+script = ExtResource("2_ciwun")
+boon_text = "Lives"
+boon_type = 0
+modifier_type = 2
+stat_modifier = 1
+base_boon_duration = -1
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
 [sub_resource type="Resource" id="Resource_qjpfi"]
 script = ExtResource("2_ciwun")
 boon_text = "Jump Pad Force"
 boon_type = 4
 modifier_type = 0
 stat_modifier = 1
-base_boon_duration = -1
+base_boon_duration = 2
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
+[sub_resource type="Resource" id="Resource_ciwun"]
+script = ExtResource("2_ciwun")
+boon_text = "Lives"
+boon_type = 0
+modifier_type = 0
+stat_modifier = 1
+base_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -52,7 +70,7 @@ process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Slingshot Upgrade"
-available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_1cmoo")])
+available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_1cmoo"), SubResource("Resource_8mus1")])
 canvas = NodePath("../..")
 
 [node name="PadForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
@@ -60,7 +78,7 @@ process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Pad Force Upgrade"
-available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_qjpfi")])
+available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_qjpfi"), SubResource("Resource_ciwun")])
 canvas = NodePath("../..")
 
 [node name="Label" type="Label" parent="."]
