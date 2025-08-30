@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://boehhu87gfvr2"]
+
+[ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="1_46ncx"]
+[ext_resource type="PackedScene" uid="uid://0hu10u23s3nm" path="res://resources/prefabs/candyman.tscn" id="2_2kao3"]
+[ext_resource type="Texture2D" uid="uid://g748vaquqrsj" path="res://resources/sprites/items/Slingshot_Adjusted_BGJ.png" id="3_mhevi"]
+
+[sub_resource type="Gradient" id="Gradient_46ncx"]
+offsets = PackedFloat32Array(0, 0.958333, 1)
+colors = PackedColorArray(0.760451, 0.393269, 0.214526, 1, 0.990019, 0.97472, 0.967272, 1, 0.76746, 0.59866, 0.440061, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2kao3"]
+gradient = SubResource("Gradient_46ncx")
+width = 100
+height = 30
+
+[node name="Slingshot" type="Node2D"]
+
+[node name="Sling" type="Sprite2D" parent="." node_paths=PackedStringArray("spawn_point")]
+position = Vector2(3, 25)
+rotation = -3.14159
+texture = SubResource("GradientTexture2D_2kao3")
+script = ExtResource("1_46ncx")
+projectile_scene = ExtResource("2_2kao3")
+spawn_point = NodePath("../SpawnPoint")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(105, 17)
+
+[node name="CandyBase" type="Sprite2D" parent="."]
+position = Vector2(-18, 243)
+texture = ExtResource("3_mhevi")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cedf8dexfe75p"]
+[gd_scene load_steps=11 format=3 uid="uid://cedf8dexfe75p"]
 
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_7i2ea"]
 [ext_resource type="Script" uid="uid://n3rmwtdtremj" path="res://scripts/systems/main_menu.gd" id="1_kov03"]
+[ext_resource type="FontFile" uid="uid://cu4b0tdcak664" path="res://resources/fonts/Super Kindly.ttf" id="3_lmihv"]
+[ext_resource type="Texture2D" uid="uid://c0bljpvqmgdqc" path="res://resources/sprites/icon.png" id="4_y27fs"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ny5bo"]
 size = Vector2(3, 1)
@@ -18,15 +20,8 @@ region = Rect2(128, 128, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_axby4"]
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="FontFile" id="FontFile_jelxa"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_py80f"]
-font = SubResource("FontFile_jelxa")
+font = ExtResource("3_lmihv")
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("version_text", "continue_button")]
 layout_mode = 3
@@ -121,8 +116,8 @@ text = "Game Version"
 label_settings = SubResource("LabelSettings_py80f")
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/RSide"]
-visible = false
 layout_mode = 2
+texture = ExtResource("4_y27fs")
 expand_mode = 4
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LSide/GameOptions/NewGameButton" to="." method="_on_play_button_pressed"]
