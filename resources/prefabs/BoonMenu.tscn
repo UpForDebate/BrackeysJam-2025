@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://df1bj1q7kgto1"]
+[gd_scene load_steps=5 format=3 uid="uid://df1bj1q7kgto1"]
 
 [ext_resource type="PackedScene" uid="uid://rv8l7047wj6h" path="res://resources/prefabs/BoonBtn.tscn" id="1_8mus1"]
 [ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_ciwun"]
-[ext_resource type="PackedScene" uid="uid://dje5eqwldi03p" path="res://resources/prefabs/StatsManager.tscn" id="3_ciwun"]
 
 [sub_resource type="Resource" id="Resource_1cmoo"]
 script = ExtResource("2_ciwun")
@@ -19,7 +18,7 @@ boon_text = "Jump Pad Force"
 boon_type = 4
 modifier_type = 0
 stat_modifier = 1
-base_boon_duration = 2
+base_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -48,22 +47,20 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 3
 
-[node name="SlingshotForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager", "canvas") instance=ExtResource("1_8mus1")]
+[node name="SlingshotForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
 process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Slingshot Upgrade"
 available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_1cmoo")])
-stats_manager = NodePath("../../StatsManager")
 canvas = NodePath("../..")
 
-[node name="PadForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager", "canvas") instance=ExtResource("1_8mus1")]
+[node name="PadForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
 process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Pad Force Upgrade"
 available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_qjpfi")])
-stats_manager = NodePath("../../StatsManager")
 canvas = NodePath("../..")
 
 [node name="Label" type="Label" parent="."]
@@ -76,5 +73,3 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Select a Boon!"
-
-[node name="StatsManager" parent="." instance=ExtResource("3_ciwun")]

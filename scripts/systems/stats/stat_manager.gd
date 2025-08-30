@@ -7,9 +7,26 @@ var active_boons: Array[BoonFinal] = []
 
 func _ready() -> void:
 	#stats setup
+	load_stats()
 	reset_stats()
-	reset_boons()
+
+func load_stats() -> void:
+	var stat_paths = [
+		"res://resources/stats/lives.tres",
+		"res://resources/stats/bounces.tres",
+		"res://resources/stats/max_bounces.tres",
+		"res://resources/stats/spikechance.tres",
+		"res://resources/stats/pad_force.tres",
+		"res://resources/stats/sling_force.tres",
+	]
 	
+	for path in stat_paths:
+		var res: Resource = load(path)
+		var stat := Stat.new()
+		stat.statType = res.get("statType")
+		stat.baseValue = res.get("baseValue")
+		initStats.append(stat)
+
 func reset_boons() -> void:
 	for b in range(0, active_boons.size()):
 		active_boons[b].current_boon_duration = active_boons[b].base_boon_duration
@@ -21,6 +38,7 @@ func reset_stats() -> void:
 func apply_boon(boon: BoonFinal):
 	active_boons.append(boon)
 	recalc_stats()
+	reset_boons()
 	
 func recalc_stats():
 	#reset base stat to calculate all

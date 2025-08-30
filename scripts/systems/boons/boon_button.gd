@@ -2,7 +2,6 @@ extends Control
 
 # Boons are resources dragged in the inspector
 @export var available_boons : Array[BoonFinal] = []
-@export var stats_manager : StatManager
 @export var canvas : CanvasLayer
 
 # Activates the boon menu screen and pauses the game
@@ -11,16 +10,16 @@ func _ready() -> void:
 
 func _boon_button_on_pressed() -> void:
 	for i in range(0, available_boons.size()):
-		stats_manager.apply_boon(available_boons[i])
+		stat_manager.apply_boon(available_boons[i])
 
 	for i in range(0, available_boons.size()):
 		print_debug(available_boons[i].boon_text, " Effect Added")
 	
-	for s in range(0, stats_manager.initStats.size()):
-		print_debug("Current ", stats_manager.initStats[s].StatType.keys()[s] ," Stat: ", stats_manager.initStats[s].currentValue)
+	for s in range(0, stat_manager.initStats.size()):
+		print_debug("Current ", stat_manager.initStats[s].StatType.keys()[s] ," Stat: ", stat_manager.initStats[s].currentValue)
 
 	canvas.visible = false;
 	get_tree().paused = false
 
 func _on_pass_level_button_pressed() -> void:
-	stats_manager.advance_level()
+	stat_manager.advance_level()
