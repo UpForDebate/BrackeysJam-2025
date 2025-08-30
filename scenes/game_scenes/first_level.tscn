@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://cuaymmwemlfws"]
+[gd_scene load_steps=7 format=4 uid="uid://cuaymmwemlfws"]
 
 [ext_resource type="PackedScene" uid="uid://boehhu87gfvr2" path="res://scenes/object_scenes/slingshot.tscn" id="1_s7feg"]
 [ext_resource type="TileSet" uid="uid://dy8ug0p2tor1" path="res://resources/level_tile_set.tres" id="4_s7feg"]
 [ext_resource type="Texture2D" uid="uid://s4cr5nl0tx3y" path="res://resources/sprites/bg_sky.png" id="5_s7feg"]
+[ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="6_m8mph"]
 [ext_resource type="Script" path="res://scripts/autoloads/audio_manager.gd" id="7_ff2ft"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="8_m6v08"]
 
@@ -33,3 +34,5 @@ z_index = -2
 position = Vector2(1550, 188.5)
 scale = Vector2(1.6125, 1.34907)
 texture = ExtResource("5_s7feg")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_m8mph")]
