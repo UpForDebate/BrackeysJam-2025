@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cv2kqv3k2munf" path="res://scripts/systems/boons/boon_button.gd" id="1_j6mls"]
 
 [node name="BoonBtn" type="Button"]
+process_mode = 2
 text = "Boon Text"
 script = ExtResource("1_j6mls")
 
