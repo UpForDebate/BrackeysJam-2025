@@ -1,0 +1,14 @@
+[gd_scene load_steps=9 format=3 uid="uid://dje5eqwldi03p"]
+
+[ext_resource type="Script" uid="uid://dvj53ggnntfw5" path="res://scripts/systems/stats/stat_manager.gd" id="1_p4o4u"]
+[ext_resource type="Script" uid="uid://cmpaopsvuubpd" path="res://scripts/systems/stats/stat.gd" id="2_vie6t"]
+[ext_resource type="Resource" uid="uid://bxqm11ehqfye8" path="res://resources/stats/lives.tres" id="3_8qg1u"]
+[ext_resource type="Resource" uid="uid://djdxg7w7qeq7d" path="res://resources/stats/bounces.tres" id="4_m7pan"]
+[ext_resource type="Resource" uid="uid://cssf5wpr2a3nb" path="res://resources/stats/max_bounces.tres" id="5_ks03g"]
+[ext_resource type="Resource" uid="uid://tselc6u2fjrw" path="res://resources/stats/spikechance.tres" id="6_aqoma"]
+[ext_resource type="Resource" uid="uid://cvecbm1ckodjm" path="res://resources/stats/pad_force.tres" id="7_3nmxm"]
+[ext_resource type="Resource" uid="uid://cf8twe6dueeyp" path="res://resources/stats/sling_force.tres" id="8_ac5h7"]
+
+[node name="StatsManager" type="Node2D"]
+script = ExtResource("1_p4o4u")
+initStats = Array[ExtResource("2_vie6t")]([ExtResource("3_8qg1u"), ExtResource("4_m7pan"), ExtResource("5_ks03g"), ExtResource("6_aqoma"), ExtResource("7_3nmxm"), ExtResource("8_ac5h7")])

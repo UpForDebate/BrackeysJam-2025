@@ -12,19 +12,19 @@ func _ready():
 
 func _draw():
 	var dir = force.normalized() #-transform.y.normalized()
-	var length = multiplier * 10
+	var length = stat_manager.initStats[4].currentValue * 10
 	draw_line(Vector2.ZERO, dir * length, Color.RED, 2.0)
 
 	
 func _on_body_entered(body: Node):
-	var bounce = force.normalized() * multiplier # -transform.y.normalized() * multiplier 
+	var bounce = force.normalized() * stat_manager.initStats[4].currentValue # -transform.y.normalized() * multiplier 
 	if body is PlayerRagdoll :
 		print("Collision detected with player")
 		print(bounce)
 		# body.push_away()
 		print(body.name)
 		print(body.linear_velocity)
-		body.linear_velocity =  body.linear_velocity * force.normalized() * multiplier 
+		body.linear_velocity =  body.linear_velocity * force.normalized() * stat_manager.initStats[4].currentValue 
 		print(body.linear_velocity)
 		AudioManager.play_sfx(bump_sfx)
 		# body.apply_central_impulse(bounce)

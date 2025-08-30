@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://507wtc834clt"]
+[gd_scene load_steps=9 format=3 uid="uid://507wtc834clt"]
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_tq674"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_p3m5w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_trnhj"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="5_n1hox"]
 [ext_resource type="PackedScene" uid="uid://b62sqqcrowjie" path="res://resources/prefabs/wall.tscn" id="7_jrgfi"]
+[ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="8_gfiub"]
 [ext_resource type="PackedScene" uid="uid://b2wvw67qb1x8n" path="res://resources/sprites/obstacles/spikes.tscn" id="8_ousjt"]
 
 [node name="FirstLevel" type="Node2D"]
@@ -45,3 +46,5 @@ offset_top = 165.0
 offset_right = 656.0
 offset_bottom = 205.0
 text = "Second Level"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_gfiub")]
