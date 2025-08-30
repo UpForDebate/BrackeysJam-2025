@@ -48,7 +48,6 @@ size_flags_vertical = 4
 columns = 3
 
 [node name="SlingshotForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
-process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Slingshot Upgrade"
@@ -56,7 +55,6 @@ available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_1cmoo")])
 canvas = NodePath("../..")
 
 [node name="PadForceUpgradeBtn" parent="GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
-process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Pad Force Upgrade"

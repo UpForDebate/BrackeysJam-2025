@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_ua0nc"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
-[ext_resource type="PackedScene" path="res://resources/prefabs/candyman.tscn" id="3_m6v08"]
+[ext_resource type="PackedScene" uid="uid://0hu10u23s3nm" path="res://resources/prefabs/candyman.tscn" id="3_m6v08"]
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_yiytm"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
 [ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="7_37fev"]
