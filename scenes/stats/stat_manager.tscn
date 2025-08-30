@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://wt7f30xrwu2d"]
 
-[ext_resource type="Script" uid="uid://dvj53ggnntfw5" path="res://scripts/stats/stat_manager.gd" id="1_s4kcw"]
-[ext_resource type="Script" uid="uid://cmpaopsvuubpd" path="res://scripts/stats/stat.gd" id="2_c2l57"]
+[ext_resource type="Script" uid="uid://dvj53ggnntfw5" path="res://scripts/systems/stats/stat_manager.gd" id="1_s4kcw"]
+[ext_resource type="Script" uid="uid://cmpaopsvuubpd" path="res://scripts/systems/stats/stat.gd" id="2_c2l57"]
 [ext_resource type="Resource" uid="uid://cssf5wpr2a3nb" path="res://resources/stats/max_bounces.tres" id="3_lxakw"]
 [ext_resource type="Resource" uid="uid://djdxg7w7qeq7d" path="res://resources/stats/bounces.tres" id="4_gryyh"]
 [ext_resource type="Resource" uid="uid://bxqm11ehqfye8" path="res://resources/stats/lives.tres" id="5_q58ta"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuaymmwemlfws"]
+[gd_scene load_steps=8 format=3 uid="uid://cuaymmwemlfws"]
 
 [ext_resource type="Texture2D" uid="uid://bh5uc6qbtka6x" path="res://resources/sprites/slingshot/placeholder.png" id="1_ua0nc"]
 [ext_resource type="Script" uid="uid://cq3jy682c4so8" path="res://scenes/game_scenes/slingshot.gd" id="2_qep1h"]
 [ext_resource type="PackedScene" uid="uid://0hu10u23s3nm" path="res://resources/prefabs/candyman.tscn" id="3_m6v08"]
 [ext_resource type="Texture2D" uid="uid://nv1cayn2nkfd" path="res://resources/sprites/character/balls.png" id="4_yiytm"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="6_m8mph"]
+[ext_resource type="Script" uid="uid://c7wofhjmped4s" path="res://scripts/autoloads/audio_manager.gd" id="7_ff2ft"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="8_m6v08"]
 
 [node name="FirstLevel" type="Node2D"]
@@ -40,3 +41,6 @@ next_level = "res://scenes/game_scenes/second_level.tscn"
 
 [node name="Spawn Position" type="Marker2D" parent="Mapa"]
 position = Vector2(400, 317)
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("7_ff2ft")
