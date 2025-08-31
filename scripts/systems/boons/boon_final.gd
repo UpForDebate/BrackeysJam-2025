@@ -32,4 +32,4 @@ enum ModifierType {
 
 # The amount of levels this boon will be active
 # This one is the one to be updated
-var current_boon_duration := -1; 
+@export var current_boon_duration := -1; 

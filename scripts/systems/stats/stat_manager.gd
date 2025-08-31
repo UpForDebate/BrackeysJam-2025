@@ -8,7 +8,6 @@ var active_boons: Array[BoonFinal] = []
 func _ready() -> void:
 	#stats setup
 	load_stats()
-	reset_stats()
 
 func load_stats() -> void:
 	var stat_paths = [
@@ -25,7 +24,11 @@ func load_stats() -> void:
 		var stat := Stat.new()
 		stat.statType = res.get("statType")
 		stat.baseValue = res.get("baseValue")
+		stat.currentValue = res.get("currentValue")
 		initStats.append(stat)
+
+func reset_active_boons() -> void:
+	active_boons.clear() 
 
 func reset_boons() -> void:
 	for b in range(0, active_boons.size()):
@@ -38,7 +41,6 @@ func reset_stats() -> void:
 func apply_boon(boon: BoonFinal):
 	active_boons.append(boon)
 	recalc_stats()
-	reset_boons()
 	
 func recalc_stats():
 	#reset base stat to calculate all
@@ -82,6 +84,7 @@ func advance_level():
 	# Tick down durations
 	for boon in active_boons:
 		if boon.current_boon_duration > 0:
+			print_debug("Current duration: ", boon.current_boon_duration)
 			boon.current_boon_duration -= 1
 			break
 		else: # Otherwise if the boon expired, reset its duration

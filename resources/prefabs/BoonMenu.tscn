@@ -13,6 +13,7 @@ boon_type = 5
 modifier_type = 0
 stat_modifier = 2
 base_boon_duration = 2
+current_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_8mus1"]
@@ -22,6 +23,7 @@ boon_type = 4
 modifier_type = 0
 stat_modifier = -1
 base_boon_duration = 2
+current_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_qjpfi"]
@@ -31,6 +33,7 @@ boon_type = 4
 modifier_type = 0
 stat_modifier = 2
 base_boon_duration = 2
+current_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_ciwun"]
@@ -40,6 +43,7 @@ boon_type = 5
 modifier_type = 0
 stat_modifier = -2
 base_boon_duration = 2
+current_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_tg3f7"]
@@ -49,6 +53,7 @@ boon_type = 3
 modifier_type = 2
 stat_modifier = 0
 base_boon_duration = 1
+current_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_wxsus"]
@@ -58,6 +63,7 @@ boon_type = 4
 modifier_type = 2
 stat_modifier = 0
 base_boon_duration = 1
+current_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [node name="CanvasLayer" type="CanvasLayer"]

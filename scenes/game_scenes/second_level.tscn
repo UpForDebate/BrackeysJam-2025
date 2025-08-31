@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=4 uid="uid://507wtc834clt"]
+[gd_scene load_steps=10 format=4 uid="uid://507wtc834clt"]
 
 [ext_resource type="PackedScene" uid="uid://boehhu87gfvr2" path="res://scenes/object_scenes/slingshot.tscn" id="1_03n0f"]
 [ext_resource type="TileSet" uid="uid://dy8ug0p2tor1" path="res://resources/level_tile_set.tres" id="3_i6k2a"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="4_n1hox"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="5_n1hox"]
 [ext_resource type="Texture2D" uid="uid://s4cr5nl0tx3y" path="res://resources/sprites/bg_sky.png" id="6_i6k2a"]
+[ext_resource type="PackedScene" uid="uid://cdsic1tmv0r3" path="res://scenes/game_scenes/game_over.tscn" id="7_gfiub"]
 [ext_resource type="PackedScene" uid="uid://0y0t0wp5mqvu" path="res://scenes/UI.tscn" id="7_n1hox"]
 [ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="8_gfiub"]
+[ext_resource type="Script" uid="uid://b6xhq78awh16m" path="res://scripts/systems/player_manager.gd" id="9_tq674"]
 
 [node name="SecondLevel" type="Node2D"]
 
@@ -39,4 +41,13 @@ position = Vector2(893, 547)
 scale = Vector2(1.6125, 1.34907)
 texture = ExtResource("6_i6k2a")
 
-[node name="UI" parent="." instance=ExtResource("7_n1hox")]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Lives" parent="UI" instance=ExtResource("7_n1hox")]
+
+[node name="GameOver" parent="UI" instance=ExtResource("7_gfiub")]
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("ui", "game_over_screen")]
+script = ExtResource("9_tq674")
+ui = NodePath("../UI/Lives")
+game_over_screen = NodePath("../UI/GameOver")

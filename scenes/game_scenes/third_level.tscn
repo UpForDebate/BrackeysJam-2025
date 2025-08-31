@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://cr8wqwq8a8xtx"]
+[gd_scene load_steps=11 format=4 uid="uid://cr8wqwq8a8xtx"]
 
 [ext_resource type="PackedScene" uid="uid://boehhu87gfvr2" path="res://scenes/object_scenes/slingshot.tscn" id="1_7mq74"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="2_gtrm0"]
 [ext_resource type="TileSet" uid="uid://dy8ug0p2tor1" path="res://resources/level_tile_set.tres" id="3_twq5j"]
 [ext_resource type="PackedScene" uid="uid://b2wvw67qb1x8n" path="res://resources/sprites/obstacles/spikes.tscn" id="4_gtrm0"]
-[ext_resource type="Script" path="res://scripts/autoloads/audio_manager.gd" id="4_qe2es"]
+[ext_resource type="Script" uid="uid://c7wofhjmped4s" path="res://scripts/autoloads/audio_manager.gd" id="4_qe2es"]
 [ext_resource type="Texture2D" uid="uid://s4cr5nl0tx3y" path="res://resources/sprites/bg_sky.png" id="5_80pvm"]
 [ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="6_i2r13"]
+[ext_resource type="PackedScene" uid="uid://0y0t0wp5mqvu" path="res://scenes/UI.tscn" id="8_twq5j"]
+[ext_resource type="PackedScene" uid="uid://cdsic1tmv0r3" path="res://scenes/game_scenes/game_over.tscn" id="9_qe2es"]
+[ext_resource type="Script" uid="uid://b6xhq78awh16m" path="res://scripts/systems/player_manager.gd" id="10_80pvm"]
 
 [node name="ThirdLevel" type="Node2D"]
 
@@ -25,62 +28,74 @@ tile_set = ExtResource("3_twq5j")
 
 [node name="spikes" type="Node" parent="Mapa"]
 
-[node name="Spikes" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1198, 357)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes2" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes2" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1289, 357)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes3" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes3" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1382.6, 354.503)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes4" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes4" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1473.6, 354.503)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes5" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes5" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1557.6, 362)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes6" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes6" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1648.6, 362)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes7" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes7" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1742.2, 359.503)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes8" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes8" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1833.2, 359.503)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes9" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes9" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(1925.6, 362)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes10" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes10" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(2016.6, 362)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
-[node name="Spikes11" parent="Mapa/spikes" groups=["spikes"] instance=ExtResource("4_gtrm0")]
+[node name="Spikes11" parent="Mapa/spikes" node_paths=PackedStringArray("player") groups=["spikes"] instance=ExtResource("4_gtrm0")]
 z_index = -2
 position = Vector2(2110.2, 359.503)
 rotation = 0.000443953
+player = NodePath("../../../Player")
 
 [node name="AudioManager" type="Node" parent="."]
+process_mode = 3
 script = ExtResource("4_qe2es")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -94,3 +109,14 @@ scale = Vector2(1.6125, 1.34907)
 texture = ExtResource("5_80pvm")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_i2r13")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Lives" parent="UI" instance=ExtResource("8_twq5j")]
+
+[node name="GameOver" parent="UI" instance=ExtResource("9_qe2es")]
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("ui", "game_over_screen")]
+script = ExtResource("10_80pvm")
+ui = NodePath("../UI/Lives")
+game_over_screen = NodePath("../UI/GameOver")

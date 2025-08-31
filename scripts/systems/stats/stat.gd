@@ -12,5 +12,4 @@ enum StatType{
 
 @export var statType: StatType
 @export var baseValue: float
-
-var currentValue: float
+@export var currentValue: float

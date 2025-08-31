@@ -6,4 +6,5 @@
 script = ExtResource("1_3dcvm")
 statType = 3
 baseValue = 1.0
+currentValue = 1.0
 metadata/_custom_type_script = "uid://cmpaopsvuubpd"
