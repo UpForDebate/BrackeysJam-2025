@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://0y0t0wp5mqvu"]
+
+[ext_resource type="FontFile" uid="uid://cu4b0tdcak664" path="res://resources/fonts/Super Kindly.ttf" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://dvkw0rnbnh5ot" path="res://scripts/systems/ui_manager.gd" id="1_ro3t7"]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("lives_txt")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ro3t7")
+lives_txt = NodePath("LivesValue")
+
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 52.0
+offset_top = 64.0
+offset_right = 288.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0.61715, 0, 0.0686495, 1)
+theme_override_fonts/font = ExtResource("1_dj8aq")
+theme_override_font_sizes/font_size = 50
+text = "Lives:"
+
+[node name="LivesValue" type="Label" parent="."]
+layout_mode = 1
+offset_left = 184.0
+offset_top = 64.0
+offset_right = 420.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0.61715, 0, 0.0686495, 1)
+theme_override_fonts/font = ExtResource("1_dj8aq")
+theme_override_font_sizes/font_size = 50
+text = "0"

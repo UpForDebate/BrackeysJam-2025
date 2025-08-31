@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://df1bj1q7kgto1"]
+[gd_scene load_steps=12 format=3 uid="uid://df1bj1q7kgto1"]
 
 [ext_resource type="PackedScene" uid="uid://rv8l7047wj6h" path="res://resources/prefabs/BoonBtn.tscn" id="1_8mus1"]
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_ciwun"]
 [ext_resource type="Script" uid="uid://b0pv4fdmycieg" path="res://scripts/systems/level_manager.gd" id="1_tg3f7"]
 [ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_ciwun"]
+[ext_resource type="FontFile" uid="uid://cu4b0tdcak664" path="res://resources/fonts/Super Kindly.ttf" id="5_wxsus"]
 
 [sub_resource type="Resource" id="Resource_1cmoo"]
 script = ExtResource("2_ciwun")
@@ -113,8 +114,9 @@ anchor_right = 0.5
 offset_left = -92.5
 offset_top = 40.0
 offset_right = 92.5
-offset_bottom = 154.0
+offset_bottom = 156.0
 grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("5_wxsus")
 text = "Increase slingshot force but slightly decrease jump pads force for the next 2 levels"
 horizontal_alignment = 1
 
@@ -136,6 +138,7 @@ offset_top = 40.0
 offset_right = 92.5
 offset_bottom = 154.0
 grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("5_wxsus")
 text = "Increase jump pads force but decrease slingshot force for the next 2 levels"
 horizontal_alignment = 1
 
@@ -157,6 +160,7 @@ offset_top = 40.0
 offset_right = 92.5
 offset_bottom = 154.0
 grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("5_wxsus")
 text = "Remove all spikes but jump pads have no effect for this level"
 horizontal_alignment = 1
 
