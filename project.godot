@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Corageous Commander Caramel's Chancy Cookie Conquest"
-config/version="31_08"
+config/version="Dev_31_08"
 run/main_scene="uid://qwp1fcf63yqq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://dp1fdatbaamrf"
