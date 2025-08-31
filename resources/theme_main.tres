@@ -81,3 +81,4 @@ MarginContainer/constants/margin_bottom = 60
 MarginContainer/constants/margin_left = 40
 MarginContainer/constants/margin_right = 60
 MarginContainer/constants/margin_top = 40
+TabContainer/styles/panel = null

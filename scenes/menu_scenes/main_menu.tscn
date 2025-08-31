@@ -1,27 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://cedf8dexfe75p"]
+[gd_scene load_steps=13 format=3 uid="uid://cedf8dexfe75p"]
 
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_7i2ea"]
 [ext_resource type="Script" uid="uid://n3rmwtdtremj" path="res://scripts/systems/main_menu.gd" id="1_kov03"]
+[ext_resource type="Texture2D" uid="uid://dkx0aqxaxwykg" path="res://resources/sprites/Game_Banner_BGJ.png" id="3_1co4c"]
 [ext_resource type="FontFile" uid="uid://cu4b0tdcak664" path="res://resources/fonts/Super Kindly.ttf" id="3_lmihv"]
+[ext_resource type="Texture2D" uid="uid://dge1i2hhcuvc4" path="res://resources/sprites/menu_setting.png" id="3_y27fs"]
 [ext_resource type="Texture2D" uid="uid://c0bljpvqmgdqc" path="res://resources/sprites/icon.png" id="4_y27fs"]
+[ext_resource type="Texture2D" uid="uid://dp1fdatbaamrf" path="res://resources/sprites/Logo3_BGJ.png" id="6_pc3rk"]
+[ext_resource type="Texture2D" uid="uid://g748vaquqrsj" path="res://resources/sprites/items/Slingshot_Adjusted_BGJ.png" id="7_1co4c"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ny5bo"]
-size = Vector2(3, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xp8y"]
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eb3hh"]
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_40ta1"]
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_axby4"]
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmihv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_py80f"]
 font = ExtResource("3_lmihv")
+
+[sub_resource type="Gradient" id="Gradient_ha5ma"]
+colors = PackedColorArray(0.309202, 0.740765, 0.904455, 1, 0.54787, 0.773368, 0.454043, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_30kkr"]
+gradient = SubResource("Gradient_ha5ma")
+fill_from = Vector2(0, 0.893162)
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("version_text", "continue_button")]
 layout_mode = 3
@@ -54,7 +52,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/LSide"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_ny5bo")
+texture = ExtResource("3_1co4c")
 expand_mode = 5
 
 [node name="GameOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LSide"]
@@ -64,7 +62,7 @@ theme_override_constants/separation = 33
 alignment = 1
 
 [node name="NewGameButton" type="Button" parent="MarginContainer/HBoxContainer/LSide/GameOptions"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../../../RSide/SettingsButton")
@@ -95,6 +93,11 @@ focus_previous = NodePath("../ContinueButton")
 text = "Quit
 "
 
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lmihv")
+
 [node name="RSide" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 
@@ -104,10 +107,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 focus_neighbor_left = NodePath("../../LSide/GameOptions/NewGameButton")
-texture_normal = SubResource("AtlasTexture_3xp8y")
-texture_pressed = SubResource("AtlasTexture_eb3hh")
-texture_hover = SubResource("AtlasTexture_40ta1")
-texture_focused = SubResource("AtlasTexture_axby4")
+texture_normal = ExtResource("3_y27fs")
+texture_pressed = ExtResource("3_y27fs")
+texture_hover = ExtResource("3_y27fs")
+texture_focused = ExtResource("3_y27fs")
 stretch_mode = 4
 
 [node name="VersionLabel" type="Label" parent="MarginContainer/HBoxContainer/RSide"]
@@ -119,6 +122,35 @@ label_settings = SubResource("LabelSettings_py80f")
 layout_mode = 2
 texture = ExtResource("4_y27fs")
 expand_mode = 4
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo3Bgj" type="Sprite2D" parent="Control"]
+z_index = -2
+position = Vector2(683, 332)
+scale = Vector2(0.491814, 0.491814)
+texture = ExtResource("6_pc3rk")
+
+[node name="SlingshotAdjustedBgj" type="Sprite2D" parent="Control"]
+z_index = -2
+position = Vector2(255, 537)
+texture = ExtResource("7_1co4c")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_30kkr")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LSide/GameOptions/NewGameButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LSide/GameOptions/QuitButton" to="." method="_on_quit_button_pressed"]
