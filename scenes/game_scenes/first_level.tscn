@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://dy8ug0p2tor1" path="res://resources/level_tile_set.tres" id="4_s7feg"]
 [ext_resource type="Texture2D" uid="uid://s4cr5nl0tx3y" path="res://resources/sprites/bg_sky.png" id="5_s7feg"]
 [ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="6_m8mph"]
-[ext_resource type="Script" uid="uid://c7wofhjmped4s" path="res://scripts/autoloads/audio_manager.gd" id="7_ff2ft"]
+[ext_resource type="Script" path="res://scripts/autoloads/audio_manager.gd" id="7_ff2ft"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="8_m6v08"]
 
 [node name="FirstLevel" type="Node2D"]

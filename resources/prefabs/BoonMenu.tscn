@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://df1bj1q7kgto1"]
+[gd_scene load_steps=11 format=3 uid="uid://df1bj1q7kgto1"]
 
 [ext_resource type="PackedScene" uid="uid://rv8l7047wj6h" path="res://resources/prefabs/BoonBtn.tscn" id="1_8mus1"]
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_ciwun"]
+[ext_resource type="Script" uid="uid://b0pv4fdmycieg" path="res://scripts/systems/level_manager.gd" id="1_tg3f7"]
 [ext_resource type="Script" uid="uid://ccea030es1ir2" path="res://scripts/systems/boons/boon_final.gd" id="2_ciwun"]
 
 [sub_resource type="Resource" id="Resource_1cmoo"]
@@ -15,11 +16,11 @@ metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_8mus1"]
 script = ExtResource("2_ciwun")
-boon_text = "Lives"
-boon_type = 0
-modifier_type = 2
-stat_modifier = 1
-base_boon_duration = -1
+boon_text = "Jump Pad Force"
+boon_type = 4
+modifier_type = 0
+stat_modifier = -1
+base_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_qjpfi"]
@@ -27,20 +28,39 @@ script = ExtResource("2_ciwun")
 boon_text = "Jump Pad Force"
 boon_type = 4
 modifier_type = 0
-stat_modifier = 1
+stat_modifier = 2
 base_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_ciwun"]
 script = ExtResource("2_ciwun")
-boon_text = "Lives"
-boon_type = 0
+boon_text = "Slingshot"
+boon_type = 5
 modifier_type = 0
-stat_modifier = 1
+stat_modifier = -2
 base_boon_duration = 2
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
+[sub_resource type="Resource" id="Resource_tg3f7"]
+script = ExtResource("2_ciwun")
+boon_text = "Spikes"
+boon_type = 3
+modifier_type = 2
+stat_modifier = 0
+base_boon_duration = 1
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
+[sub_resource type="Resource" id="Resource_wxsus"]
+script = ExtResource("2_ciwun")
+boon_text = "Jump Pads Force"
+boon_type = 4
+modifier_type = 2
+stat_modifier = 0
+base_boon_duration = 1
+metadata/_custom_type_script = "uid://ccea030es1ir2"
+
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_tg3f7")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -77,19 +97,68 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 3
 
-[node name="SlingshotForceUpgradeBtn" parent="Control/GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
+[node name="SlingshotForceUpgradeBtn" parent="Control/GridContainer" node_paths=PackedStringArray("canvas", "level_manager") instance=ExtResource("1_8mus1")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Slingshot Upgrade"
 available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_1cmoo"), SubResource("Resource_8mus1")])
 canvas = NodePath("../../..")
+level_manager = NodePath("../../..")
 
-[node name="PadForceUpgradeBtn" parent="Control/GridContainer" node_paths=PackedStringArray("canvas") instance=ExtResource("1_8mus1")]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/GridContainer/SlingshotForceUpgradeBtn"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.5
+offset_top = 40.0
+offset_right = 92.5
+offset_bottom = 154.0
+grow_horizontal = 2
+text = "Increase slingshot force but slightly decrease jump pads force for the next 2 levels"
+horizontal_alignment = 1
+
+[node name="PadForceUpgradeBtn" parent="Control/GridContainer" node_paths=PackedStringArray("canvas", "level_manager") instance=ExtResource("1_8mus1")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Pad Force Upgrade"
 available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_qjpfi"), SubResource("Resource_ciwun")])
 canvas = NodePath("../../..")
+level_manager = NodePath("../../..")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/GridContainer/PadForceUpgradeBtn"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.5
+offset_top = 40.0
+offset_right = 92.5
+offset_bottom = 154.0
+grow_horizontal = 2
+text = "Increase jump pads force but decrease slingshot force for the next 2 levels"
+horizontal_alignment = 1
+
+[node name="SpikesChanceUpgradeBtn" parent="Control/GridContainer" node_paths=PackedStringArray("canvas", "level_manager") instance=ExtResource("1_8mus1")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Remove SPikes Upgrade"
+available_boons = Array[ExtResource("2_ciwun")]([SubResource("Resource_tg3f7"), SubResource("Resource_wxsus")])
+canvas = NodePath("../../..")
+level_manager = NodePath("../../..")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/GridContainer/SpikesChanceUpgradeBtn"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.5
+offset_top = 40.0
+offset_right = 92.5
+offset_bottom = 154.0
+grow_horizontal = 2
+text = "Remove all spikes but jump pads have no effect for this level"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
