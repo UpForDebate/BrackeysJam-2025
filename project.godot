@@ -29,6 +29,10 @@ GlobalSignalBus="*res://scripts/autoloads/global_signal_bus.gd"
 stat_manager="*res://scripts/systems/stats/stat_manager.gd"
 AudioManager="*res://scripts/autoloads/audio_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor]
 
 movie_writer/movie_file="C:/dev/GodotMovies/BrackeysTests.avi"

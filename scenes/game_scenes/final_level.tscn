@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="2_8dnuo"]
 [ext_resource type="TileSet" uid="uid://dy8ug0p2tor1" path="res://resources/level_tile_set.tres" id="3_mt3ok"]
 [ext_resource type="PackedScene" uid="uid://b2wvw67qb1x8n" path="res://resources/sprites/obstacles/spikes.tscn" id="4_6pb5u"]
-[ext_resource type="Script" path="res://scripts/autoloads/audio_manager.gd" id="5_jp3ub"]
+[ext_resource type="Script" uid="uid://c7wofhjmped4s" path="res://scripts/autoloads/audio_manager.gd" id="5_jp3ub"]
 [ext_resource type="Texture2D" uid="uid://s4cr5nl0tx3y" path="res://resources/sprites/bg_sky.png" id="6_q0jt3"]
 [ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="7_qb7sn"]
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="8_8dnuo"]
