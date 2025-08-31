@@ -35,35 +35,19 @@ var credits = [
 	[
 		"A game by UpForDebate"
 	],[
-		"Programming",
-		"Programmer Name",
-		"Programmer Name 2"
+		"Cave Smasher",
+		"MrFinix",
+		"Niko",
+		"Raging Bass 2020"
 	],[
 		"Art",
-		"Artist Name"
-	],[
-		"Music",
-		"Musician Name"
-	],[
-		"Sound Effects",
-		"SFX Name"
-	],[
-		"Testers",
-		"Name 1",
-		"Name 2",
-		"Name 3"
+		"Cave Smasher",
+		"",
+		"Additional art by Kenney: https://kenney.nl/"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
-		"",
-		"Art created with My Favourite Art Program",
-		"https://myfavouriteartprogram.com"
-	],[
-		"Special thanks",
-		"My parents",
-		"My friends",
-		"My pet rabbit"
 	]
 ]
 

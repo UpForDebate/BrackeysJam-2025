@@ -1,18 +1,31 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddgsdjkeksl82"]
 
-[ext_resource type="Texture2D" uid="uid://c2px0l6vdfum0" path="res://resources/sprites/obstacles/pad.png" id="1_yt04k"]
 [ext_resource type="Script" uid="uid://c1r18rewayv5m" path="res://resources/sprites/obstacles/pad.gd" id="2_d13qa"]
+[ext_resource type="Texture2D" uid="uid://bk07x0knp2ljd" path="res://resources/sprites/Jump-Pad_BGJ.png" id="2_yt04k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ff2ft"]
-size = Vector2(145, 15)
+size = Vector2(180, 85.5)
 
-[node name="Pad" type="Sprite2D"]
-texture = ExtResource("1_yt04k")
+[node name="Pad" type="Node2D"]
 script = ExtResource("2_d13qa")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-71, 71)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(75, 8)
+position = Vector2(73, -27.25)
 shape = SubResource("RectangleShape2D_ff2ft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 34)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_yt04k")
+region_enabled = true
+region_rect = Rect2(323.75, 595.173, 453.646, 232.827)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -1.90735e-06)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_yt04k")
+region_enabled = true
+region_rect = Rect2(298.072, 238.534, 507.855, 202.571)

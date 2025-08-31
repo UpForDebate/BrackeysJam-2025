@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 @export var force: Vector2 =  Vector2(-10, -10)
 @export var multiplier: float = 10.0

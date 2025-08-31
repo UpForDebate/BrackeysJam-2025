@@ -39,10 +39,12 @@ func change_gui_scene(
 			current_gui_scene.visible = false # Keeps in memory and running
 		else:
 			gui.remove_child(current_gui_scene) # Keeps in memory but doesn't run
-	var new = load(new_scene).instantiate()
-	gui.add_child(new)
-	gui.move_child(new, 0)
-	current_gui_scene = new
+	
+	if new_scene != "":
+		var new = load(new_scene).instantiate()
+		gui.add_child(new)
+		gui.move_child(new, 0)
+		current_gui_scene = new
 	
 	transition_controller.transition(transition_in, seconds)
 

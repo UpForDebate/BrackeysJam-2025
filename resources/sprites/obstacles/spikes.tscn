@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2wvw67qb1x8n"]
 
-[ext_resource type="Texture2D" uid="uid://dtocevkj5cq2o" path="res://resources/sprites/obstacles/spikes.png" id="1_x36qf"]
+[ext_resource type="Texture2D" uid="uid://bygu0q5xk2qc5" path="res://resources/sprites/Candy_Corn_Spike_BGJ.png" id="1_x36qf"]
 [ext_resource type="Script" uid="uid://y3406ncr68uf" path="res://scenes/game_scenes/spikes.gd" id="2_ctf1u"]
 
 [node name="Spikes" type="Sprite2D"]
@@ -12,5 +12,6 @@ script = ExtResource("2_ctf1u")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+z_index = -2
 position = Vector2(16.6711, -89.999)
-polygon = PackedVector2Array(-30, 0, 96.6639, 56.6714, 126.663, 73.3394, 116.658, 173.339, -153.342, 179.992, -183.336, 59.991)
+polygon = PackedVector2Array(33.1736, -30.0656, 93.2253, 9.85673, 109.918, 29.8351, 150.142, 203.117, -186.533, 196.886, -133.411, 33.4833)
