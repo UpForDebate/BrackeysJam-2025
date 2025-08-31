@@ -38,7 +38,7 @@ var credits = [
 		"Cave Smasher",
 		"MrFinix",
 		"Niko",
-		"Raging Bass 2020",
+		"ragingbass2020",
 		"gØÐ¢αllΩ"
 	],[
 		"Art",

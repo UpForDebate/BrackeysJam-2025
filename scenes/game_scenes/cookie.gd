@@ -9,6 +9,7 @@ func _ready():
 func _on_body_entered(body: Node):
 	if body is RigidBody2D and body.has_meta("isPlayer"):
 		print("Player Collided with Cookie")
+		AudioManager.play_sfx("victory")
 		stat_manager.advance_level()
 		_trigger_win_level()
 		

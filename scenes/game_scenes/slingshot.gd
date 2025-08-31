@@ -40,6 +40,7 @@ func _launch_projectile():
 	
 	# Apply impulse at its center of mass
 	projectile.apply_central_impulse(launch_force)
+	AudioManager.play_sfx("slingshot")
 	
 	
 func _input(event):
