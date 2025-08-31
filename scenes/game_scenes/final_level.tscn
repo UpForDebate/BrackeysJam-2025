@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddgsdjkeksl82" path="res://resources/sprites/obstacles/pad.tscn" id="8_8dnuo"]
 [ext_resource type="PackedScene" uid="uid://cdsic1tmv0r3" path="res://scenes/game_scenes/game_over.tscn" id="9_6pb5u"]
 [ext_resource type="PackedScene" uid="uid://0y0t0wp5mqvu" path="res://scenes/UI.tscn" id="9_mt3ok"]
-[ext_resource type="Script" uid="uid://b6xhq78awh16m" path="res://scripts/systems/player_manager.gd" id="11_jp3ub"]
+[ext_resource type="Script" path="res://scripts/systems/player_manager.gd" id="11_jp3ub"]
 
 [node name="FinalLevel" type="Node2D"]
 
@@ -117,8 +117,11 @@ position = Vector2(1880, -208)
 rotation = -3.14159
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Lives" parent="UI" instance=ExtResource("9_mt3ok")]
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_6pb5u")]
 

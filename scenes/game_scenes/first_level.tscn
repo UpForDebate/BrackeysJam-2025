@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0y0t0wp5mqvu" path="res://scenes/UI.tscn" id="7_m6v08"]
 [ext_resource type="PackedScene" uid="uid://baj344bonl1kf" path="res://resources/sprites/obstacles/cookie.tscn" id="8_m6v08"]
 [ext_resource type="PackedScene" uid="uid://cdsic1tmv0r3" path="res://scenes/game_scenes/game_over.tscn" id="9_aneg2"]
-[ext_resource type="Script" uid="uid://b6xhq78awh16m" path="res://scripts/systems/player_manager.gd" id="10_677p8"]
+[ext_resource type="Script" path="res://scripts/systems/player_manager.gd" id="10_677p8"]
 
 [node name="FirstLevel" type="Node2D"]
 
@@ -44,6 +44,7 @@ texture = ExtResource("5_s7feg")
 [node name="CanvasLayer" parent="." instance=ExtResource("6_m8mph")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Lives" parent="UI" instance=ExtResource("7_m6v08")]
 process_mode = 3

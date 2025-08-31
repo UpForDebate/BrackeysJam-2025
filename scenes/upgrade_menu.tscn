@@ -13,6 +13,7 @@ boon_type = 0
 modifier_type = 1
 stat_modifier = 3
 base_boon_duration = 3
+current_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [sub_resource type="Resource" id="Resource_6vqdt"]
@@ -22,6 +23,7 @@ boon_type = 0
 modifier_type = 2
 stat_modifier = 1
 base_boon_duration = -1
+current_boon_duration = -1
 metadata/_custom_type_script = "uid://ccea030es1ir2"
 
 [node name="BoonMenu" type="Control"]
@@ -59,17 +61,15 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
-[node name="HealthBoonBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager") instance=ExtResource("9_he6dt")]
+[node name="HealthBoonBtn" parent="GridContainer" instance=ExtResource("9_he6dt")]
 layout_mode = 2
 text = "Health Upgrade"
 available_boons = Array[ExtResource("2_o1026")]([ExtResource("2_ksfom"), SubResource("Resource_ixicc")])
-stats_manager = NodePath("../../StatManager")
 
-[node name="SpikesChanceBoonBtn" parent="GridContainer" node_paths=PackedStringArray("stats_manager") instance=ExtResource("9_he6dt")]
+[node name="SpikesChanceBoonBtn" parent="GridContainer" instance=ExtResource("9_he6dt")]
 layout_mode = 2
 text = "Spikes Chance Upgrade"
 available_boons = Array[ExtResource("2_o1026")]([SubResource("Resource_6vqdt"), ExtResource("4_1eg5u")])
-stats_manager = NodePath("../../StatManager")
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2

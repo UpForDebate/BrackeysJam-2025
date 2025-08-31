@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdsic1tmv0r3"]
 
 [ext_resource type="FontFile" uid="uid://cu4b0tdcak664" path="res://resources/fonts/Super Kindly.ttf" id="1_c5rw3"]
-[ext_resource type="Script" uid="uid://180iag8j16o1" path="res://scripts/systems/game_over.gd" id="1_dtmun"]
+[ext_resource type="Script" path="res://scripts/systems/game_over.gd" id="1_dtmun"]
 
 [node name="GameOver" type="Control"]
 process_mode = 2

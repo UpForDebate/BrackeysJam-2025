@@ -7,6 +7,6 @@ func _ready():
 
 func _on_body_entered(body: Node):
 	if body.has_meta("isPlayer"):
-		player.handle_player_lives()
+		#player.handle_player_lives()
 		body.queue_free()
 		# Should emit event for the game manager to handle this (score/points, etc)

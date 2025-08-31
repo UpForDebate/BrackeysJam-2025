@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://df1bj1q7kgto1" path="res://resources/prefabs/BoonMenu.tscn" id="6_i2r13"]
 [ext_resource type="PackedScene" uid="uid://0y0t0wp5mqvu" path="res://scenes/UI.tscn" id="8_twq5j"]
 [ext_resource type="PackedScene" uid="uid://cdsic1tmv0r3" path="res://scenes/game_scenes/game_over.tscn" id="9_qe2es"]
-[ext_resource type="Script" uid="uid://b6xhq78awh16m" path="res://scripts/systems/player_manager.gd" id="10_80pvm"]
+[ext_resource type="Script" path="res://scripts/systems/player_manager.gd" id="10_80pvm"]
 
 [node name="ThirdLevel" type="Node2D"]
 
@@ -111,6 +111,7 @@ texture = ExtResource("5_80pvm")
 [node name="CanvasLayer" parent="." instance=ExtResource("6_i2r13")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Lives" parent="UI" instance=ExtResource("8_twq5j")]
 
