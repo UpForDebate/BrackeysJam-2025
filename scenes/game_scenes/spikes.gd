@@ -7,4 +7,5 @@ func _ready():
 func _on_body_entered(body: Node):
 	if body.has_meta("isPlayer"):
 		body.queue_free()
+		AudioManager.play_sfx("stab")
 		# Should emit event for the game manager to handle this (score/points, etc)

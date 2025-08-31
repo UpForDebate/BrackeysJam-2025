@@ -4,17 +4,21 @@ const SFX_FOLDER: String = "res://resources/audio/sfx/"
 const BGM_FOLDER: String = "res://resources/audio/bgm/"
 
 const HIT_SFX = SFX_FOLDER + "bump.wav"
+const BOUNCE_SFX = SFX_FOLDER + "bounce.wav"
+const STAB_SFX = SFX_FOLDER + "stab.wav"
 const DIE_SFX = SFX_FOLDER + "lose.wav"
+const SLINGSHOT_SFX = SFX_FOLDER + "slingshot.wav"
 const VICTORY_JINGLE = BGM_FOLDER + "victory.wav"
 const GAME_BGM = BGM_FOLDER + "game.wav"
-const MENU_BGM = BGM_FOLDER + "menu.wav"
+const MENU_BGM = BGM_FOLDER + "menu.mp3"
 
 # Dictionary of preloaded sounds
 var sfx = {
-	"stab": preload(HIT_SFX),
-	"bounce": preload(HIT_SFX),
+	"stab": preload(STAB_SFX),
+	"bounce": preload(BOUNCE_SFX),
 	"hit": preload(HIT_SFX),
-	"die": preload(DIE_SFX)
+	"die": preload(DIE_SFX),
+	"slingshot": preload(SLINGSHOT_SFX)
 }
 
 var music = {
