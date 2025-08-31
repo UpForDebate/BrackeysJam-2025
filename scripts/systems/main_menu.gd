@@ -13,6 +13,7 @@ func _ready():
 	
 	if OS.has_feature("android") or OS.has_feature("ios"):
 		$MarginContainer/HBoxContainer/LSide/GameOptions/QuitButton.visible = false
+	AudioManager.play_music("menu")
 
 
 func _on_play_button_pressed():
