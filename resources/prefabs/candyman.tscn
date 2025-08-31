@@ -145,3 +145,6 @@ node_a = NodePath("../../Right Leg")
 node_b = NodePath("../..")
 angular_limit_lower = -0.657989
 angular_limit_upper = 1.5132
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

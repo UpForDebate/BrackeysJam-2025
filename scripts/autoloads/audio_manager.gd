@@ -8,8 +8,8 @@ const BOUNCE_SFX = SFX_FOLDER + "bounce.wav"
 const STAB_SFX = SFX_FOLDER + "stab.wav"
 const DIE_SFX = SFX_FOLDER + "lose.wav"
 const SLINGSHOT_SFX = SFX_FOLDER + "slingshot.wav"
-const VICTORY_JINGLE = BGM_FOLDER + "victory.wav"
-const GAME_BGM = BGM_FOLDER + "game.wav"
+const VICTORY_SFX = SFX_FOLDER + "victory.mp3"
+const GAME_BGM = BGM_FOLDER + "game.mp3"
 const MENU_BGM = BGM_FOLDER + "menu.mp3"
 
 # Dictionary of preloaded sounds
@@ -18,13 +18,13 @@ var sfx = {
 	"bounce": preload(BOUNCE_SFX),
 	"hit": preload(HIT_SFX),
 	"die": preload(DIE_SFX),
-	"slingshot": preload(SLINGSHOT_SFX)
+	"slingshot": preload(SLINGSHOT_SFX),
+	"victory": preload(VICTORY_SFX),
 }
 
 var music = {
 	"menu": preload(MENU_BGM),
-	"battle": preload(GAME_BGM),
-	"victory": preload(VICTORY_JINGLE)
+	"game": preload(GAME_BGM),
 }
 
 # --- Pool Settings ---
@@ -49,11 +49,16 @@ func _ready():
 func play_sfx(name: String):
 	if name in sfx:
 		var stream = sfx[name]
+		print("name " + name)
 		var player = _get_free_sfx_player()
 		if player:
+			print("Playing stream " + name)
 			player.stream = stream
 			player.play()
+			if (not player.playing):
+				print("Failed to start sfx")
 		else:
+			print("Not playing " + name)
 			push_warning("No free SFX players available for '%s'!" % name)
 	else:
 		push_warning("SFX '%s' not found in dictionary!" % name)
