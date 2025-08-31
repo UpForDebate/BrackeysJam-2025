@@ -3,6 +3,7 @@ extends Control
 # Boons are resources dragged in the inspector
 @export var available_boons : Array[BoonFinal] = []
 @export var canvas : CanvasLayer
+@export var level_manager : LevelManager
 
 # Activates the boon menu screen and pauses the game
 func _ready() -> void:
@@ -20,6 +21,7 @@ func _boon_button_on_pressed() -> void:
 
 	canvas.visible = false;
 	get_tree().paused = false
+	level_manager.check_spikes()
 
 func _on_pass_level_button_pressed() -> void:
 	stat_manager.advance_level()
